@@ -121,7 +121,7 @@ def CalcBody_Init(geometry, title, equal_function, number_function, dot_function
 	secBtn = func_btn("sec")
 	cscBtn = func_btn("csc")
 	cotBtn = func_btn("cot")
-	facBtn = func_btn()
+	facBtn = func_btn("fact")
 
 	qrtBtn.grid(column=COLOFFSET+4, row=ROWOFFSET+0)
 	logBtn.grid(column=COLOFFSET+5, row=ROWOFFSET+0)
