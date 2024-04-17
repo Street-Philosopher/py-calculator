@@ -4,6 +4,9 @@ from math import atan as t #also atan because yes
 from enum import Enum
 
 
+def isnumber(x):
+	return (isinstance(x, float) or isinstance(x, int))
+
 
 class angleMode(Enum):
 	rad = 0
@@ -19,7 +22,7 @@ def cos(x : float, mode : angleMode = angleMode.rad, precision = 22, sigfigs = 1
 	#this prevents angles from being bad
 	if mode == angleMode.deg:
 		x *= DEG2RAD #convert to rad because i'm lazy
-	if isinstance(x, float):
+	if isnumber(x):
 		while x > +pi:
 			x -= 2 * pi
 		while x < -pi:
@@ -36,7 +39,7 @@ def cos(x : float, mode : angleMode = angleMode.rad, precision = 22, sigfigs = 1
 		result += change
 	#END FOR
 
-	if (isinstance(result, float)):
+	if isnumber(result):
 		return round(result, sigfigs)
 	else:
 		return result
@@ -167,7 +170,7 @@ def EXP(x : float, precision = "infinity") -> float:
 
 #more precision will break stuff
 def ln(x : float, precision = 400) -> float:
-	if isinstance(x, float):
+	if isnumber(x):
 		if x <= 0:
 			return None
 

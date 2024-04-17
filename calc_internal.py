@@ -61,6 +61,7 @@ FUNCTIONS = [
 	"csc",
 	"cot"
 ]
+anglemode_funcs = ["sin(", "cos(", "tan(", "asin(", "acos(", "atan(", "cot(", "csc(", "sec("]
 
 # BUTTON FUNCS
 
@@ -230,7 +231,6 @@ def Btn_EqualSign() -> None | str:
 	#END PAR CHECK
 	
 	if currentAngleMode == angleMode.deg:
-		anglemode_funcs = ["sin(", "cos(", "tan(", "asin(", "acos(", "atan(", "cot(", "csc(", "sec("]
 		count = 0
 		for i in range(len(expression)):
 			currentToken = expression[i]

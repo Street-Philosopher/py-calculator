@@ -92,27 +92,39 @@ def CalcBody_Init(geometry, title, equal_function, number_function, dot_function
 	clpBtn.grid(column=COLOFFSET+2, row=ROWOFFSET+5)
 
 
+	def func_btn(label, funcname=None):
+		if funcname is None:
+			funcname = label
+		obj = _tk.Button(
+			window,
+			text=label,
+			command=lambda:function_function(funcname),
+			width=2*DEFAULTWIDTH,
+			height=DEFAULTHEIGHT,
+			bg=FUNC_COLOURS[0],
+			activebackground=FUNC_COLOURS[1]
+		)
+		return obj
 
-	qrtBtn = _tk.Button(window, text="√",    command=lambda:function_function("√"),    width=2*DEFAULTWIDTH,height=DEFAULTHEIGHT, bg=FUNC_COLOURS[0], activebackground=FUNC_COLOURS[1])
-	sinBtn = _tk.Button(window, text="sin",  command=lambda:function_function("sin"),  width=2*DEFAULTWIDTH,height=DEFAULTHEIGHT, bg=FUNC_COLOURS[0], activebackground=FUNC_COLOURS[1])
-	cosBtn = _tk.Button(window, text="cos",  command=lambda:function_function("cos"),  width=2*DEFAULTWIDTH,height=DEFAULTHEIGHT, bg=FUNC_COLOURS[0], activebackground=FUNC_COLOURS[1])
-	tanBtn = _tk.Button(window, text="tan",  command=lambda:function_function("tan"),  width=2*DEFAULTWIDTH,height=DEFAULTHEIGHT, bg=FUNC_COLOURS[0], activebackground=FUNC_COLOURS[1])
-	asnBtn = _tk.Button(window, text="asin", command=lambda:function_function("asin"), width=2*DEFAULTWIDTH,height=DEFAULTHEIGHT, bg=FUNC_COLOURS[0], activebackground=FUNC_COLOURS[1])
-	acsBtn = _tk.Button(window, text="acos", command=lambda:function_function("acos"), width=2*DEFAULTWIDTH,height=DEFAULTHEIGHT, bg=FUNC_COLOURS[0], activebackground=FUNC_COLOURS[1])
-	atnBtn = _tk.Button(window, text="atan", command=lambda:function_function("atan"), width=2*DEFAULTWIDTH,height=DEFAULTHEIGHT, bg=FUNC_COLOURS[0], activebackground=FUNC_COLOURS[1])
-	lnBtn  = _tk.Button(window, text="ln",   command=lambda:function_function("ln"),   width=2*DEFAULTWIDTH,height=DEFAULTHEIGHT, bg=FUNC_COLOURS[0], activebackground=FUNC_COLOURS[1])
-	expBtn = _tk.Button(window, text="exp",  command=lambda:function_function("exp"),  width=2*DEFAULTWIDTH,height=DEFAULTHEIGHT, bg=FUNC_COLOURS[0], activebackground=FUNC_COLOURS[1])
-	logBtn = _tk.Button(window, text="log",  command=lambda:function_function("log"),  width=2*DEFAULTWIDTH,height=DEFAULTHEIGHT, bg=FUNC_COLOURS[0], activebackground=FUNC_COLOURS[1])
-	recBtn = _tk.Button(window, text="rec",  command=lambda:function_function("rec"),  width=2*DEFAULTWIDTH,height=DEFAULTHEIGHT, bg=FUNC_COLOURS[0], activebackground=FUNC_COLOURS[1])
-	absBtn = _tk.Button(window, text="abs",  command=lambda:function_function("abs"),  width=2*DEFAULTWIDTH,height=DEFAULTHEIGHT, bg=FUNC_COLOURS[0], activebackground=FUNC_COLOURS[1])
-	secBtn = _tk.Button(window, text="sec",  command=lambda:function_function("sec"),  width=2*DEFAULTWIDTH,height=DEFAULTHEIGHT, bg=FUNC_COLOURS[0], activebackground=FUNC_COLOURS[1])
-	cscBtn = _tk.Button(window, text="csc",  command=lambda:function_function("csc"),  width=2*DEFAULTWIDTH,height=DEFAULTHEIGHT, bg=FUNC_COLOURS[0], activebackground=FUNC_COLOURS[1])
-	cotBtn = _tk.Button(window, text="cot",  command=lambda:function_function("cot"),  width=2*DEFAULTWIDTH,height=DEFAULTHEIGHT, bg=FUNC_COLOURS[0], activebackground=FUNC_COLOURS[1])
-	facBtn = _tk.Button(window, text="!",    command=lambda:function_function("fact"), width=1*DEFAULTWIDTH,height=DEFAULTHEIGHT, bg=FUNC_COLOURS[0], activebackground=FUNC_COLOURS[1])
+	qrtBtn = func_btn("√")
+	sinBtn = func_btn("sin")
+	cosBtn = func_btn("cos")
+	tanBtn = func_btn("tan")
+	asnBtn = func_btn("asin")
+	acsBtn = func_btn("acos")
+	atnBtn = func_btn("atan")
+	lnBtn  = func_btn("ln")
+	expBtn = func_btn("exp")
+	logBtn = func_btn("log")
+	recBtn = func_btn("rec")
+	absBtn = func_btn("abs")
+	secBtn = func_btn("sec")
+	cscBtn = func_btn("csc")
+	cotBtn = func_btn("cot")
+	facBtn = func_btn()
 
 	qrtBtn.grid(column=COLOFFSET+4, row=ROWOFFSET+0)
 	logBtn.grid(column=COLOFFSET+5, row=ROWOFFSET+0)
-	# facBtn.grid(column=COLOFFSET+6, row=ROWOFFSET+0)
 	sinBtn.grid(column=COLOFFSET+4, row=ROWOFFSET+1)
 	asnBtn.grid(column=COLOFFSET+5, row=ROWOFFSET+1)
 	cosBtn.grid(column=COLOFFSET+4, row=ROWOFFSET+2)
@@ -121,6 +133,7 @@ def CalcBody_Init(geometry, title, equal_function, number_function, dot_function
 	atnBtn.grid(column=COLOFFSET+5, row=ROWOFFSET+3)
 	lnBtn .grid(column=COLOFFSET+4, row=ROWOFFSET+4)
 	expBtn.grid(column=COLOFFSET+5, row=ROWOFFSET+4)
+	facBtn.grid(column=COLOFFSET+6, row=ROWOFFSET+4)
 	recBtn.grid(column=COLOFFSET+4, row=ROWOFFSET+5)
 	absBtn.grid(column=COLOFFSET+5, row=ROWOFFSET+5)
 	secBtn.grid(column=COLOFFSET+6, row=ROWOFFSET+2)
